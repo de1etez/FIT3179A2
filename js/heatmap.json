@@ -19,7 +19,7 @@
           "type": "quantitative",
           "title": "Count of Medals",
           "scale": {"scheme": "Blues"},
-          "legend": { "gradientLength": 580 }
+          "legend": { "gradientLength": 200 }
         }
       }
     },
