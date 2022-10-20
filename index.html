@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+      .chart1,
+      .chart2 {
+        display: grid;
+        grid-template-columns: 10vw 45vw;
+        justify-content: center;
+        align-content: center;
+      }
+      .chart3 {
+        display: grid;
+        grid-template-columns: 45vw 10vw;
+        grid-gap: 20px;
+        justify-content: center;
+        align-content: center;
+      }
+      .chart4,
+      .chart5,
+
+      #v1,
+      #v2,
+      #v3 {
+        width: 45vw;
+        height: 50vh;
+        margin: 40px;
+      }
+
+      main {
+        margin: 30px 20%;
+        padding: 50px;
+        border: 0.5px solid lightgray;
+        border-radius: 20px;
+      } 
+      h1 {
+        text-align: center;
+      }
+      p {
+        padding-left: 40px;
+        line-height: 30px;
+        font-size: 1.1rem;
+        color: black;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Beijing 2022 Olympic Winter Games</h1>
+      <p>
+        The Winter Olympic Games, also known as the Winter Olympics and the
+        Winter Olympics, are the Olympic Games for winter sports, held every
+        four years, with the main feature of the event being winter sports held
+        on ice and snow, such as ice skating and skiing, which are suitable for
+        winter. The XXIV Olympic Winter Games, also known as the 2022 Winter
+        Olympics, take place in Beijing, the capital of the People's Republic of
+        China, from February 4 to February 20, 2022. The data shows, the
+        distribution of athletes from different regions, the distribution of
+        sports and the ratio of men to women in the sports and the ranking of
+        national teams in terms of the number of medals.
+      </p>
+      <hr />
+      <h2>Locations</h2>
+      <section class="chart1">
+        <div id="v1"></div>
+      </section>
+        <p>
+          This map shows the distribution of athletes participating in the
+          Winter Olympics. The darker the color, the higher the number of
+          participants. The largest number of athletes is from the countries
+          participating in the games.
+        </p>
+      
+      <hr />
+      <h2>Competitors</h2>
+      <section class="chart2">
+        <p>
+          The pie chart shows the percentasge of athletes participating in
+          different sports, and the percentage of men and women.
+        </p>
+        <div id="v2"></div>
+      </section>
+      <section class="chart3">
+        <p>
+          The pie chart shows the percentage of athletes participating in
+          different sports, and the percentage of men and women.
+        </p>
+        <div id="v3"></div>
+      </section>
+      <hr />
+      <h2>Ranking</h2>
+      <section class="chart4">
+        <div id="vg4"></div>
+        <p>
+          The stacked bar chart displays the total number of medals the country
+          team has won, broke down into gold, silver and bronze medal tallies.
+          In terms of total, Norway, ROC, and Germany were the top three in
+          terms of total medals. Surprisingly, the top three in total gold
+          medals were Norway, Germany and China.
+        </p>
+      </section>
+      <section class="chart5">
+        <div id="vg5"></div>
+        <p>
+          The stacked bar chart displays the total number of medals the country
+          team has won, broke down into gold, silver and bronze medal tallies.
+          In terms of total, Norway, ROC, and Germany were the top three in
+          terms of total medals. Surprisingly, the top three in total gold
+          medals were Norway, Germany and China.
+        </p>
+      </section>
+    </main>
+  </body>
+  <script>
+   var v1 = "js/map.json";
+  vegaEmbed('#v1', v1).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  var v2 = "js/donut.json";
+  vegaEmbed('#v2', v2,{"actions": false}).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  var v3 = "js/area.json";
+  vegaEmbed('#v3', v3).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  var v4 = "js/bar.json";
+  vegaEmbed('#v4', vg4).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+
+  var v5 = "js/heatmap.json";
+  vegaEmbed('#v5', vg5).then(function(result) {
+    // Access the Vega view instance
+  }).catch(console.error);
+  </script>
+</html>
