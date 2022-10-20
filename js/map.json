@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
-  "height": 300,
+  "width": "container",
+  "height": "container",
   "title": {"text": "Athletes' country", "fontSize": 15},
   "layer": [
     {
