@@ -9,9 +9,32 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <style>
+      
+      
+      .chart1,
+      .chart2 {
+        display: grid;
+        grid-template-columns: 10vw 45vw;
+        justify-content: center;
+        align-content: center;
+      }
+      .chart3 {
+        display: grid;
+        grid-template-columns: 45vw 10vw;
+        grid-gap: 20px;
+        justify-content: center;
+        align-content: center;
+      }
+      .chart4,
+      .chart5,
+
       #v1,
       #v2,
-      #v3,
+      #v3 {
+        width: 45vw;
+        height: 50vh;
+        margin: 40px;
+      }
       #v4,
       #v5,
 
@@ -28,7 +51,7 @@
       h2 {
         color:rgb(62, 161, 194);
       p {
-        padding-left: 40px;
+        padding-left: 50px;
         line-height: 30px;
         font-size: 1.1rem;
         color: black;
@@ -73,7 +96,7 @@
         <p>
           The pie chart shows the approximate percentage of participants in the different events, 
           with the largest number of participants being ice honkey at 547.<br>Through area chart, 
-          Nordic Combined as an extreme sport, there are no girls at all in this event to participate in this project.
+          Nordic Combined as an extreme sport, there are no female at all in this event to participate in this project.
         </p>
       
       <section class="chart3">
