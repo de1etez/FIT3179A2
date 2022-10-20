@@ -1,49 +1,50 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": "container",
-  "data": {"url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/entries_discipline.csv"},
-    "params": [
-    {
-      "name": "Gender",
-      "value": "Total",
-      "bind": { "input": "select", "options": ["F", "M", "Total"] }
-    }
-  ],
-  "transform": [
-    { "fold": ["F", "M", "Total"] },
-    { "filter": { "field": "key", "equal": { "expr": "Gender" } } },
-    { "filter": "datum.Discipline!='Total'" }
-  ],
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height": "container",
+    "data": {"url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/entries_discipline.csv"},
+      "params": [
+      {
+        "name": "Gender",
+        "value": "Total",
+        "bind": { "input": "select", "options": ["F", "M", "Total"] }
+      }
+    ],
+    "transform": [
+      { "fold": ["F", "M", "Total"] },
+      { "filter": { "field": "key", "equal": { "expr": "Gender" } } },
+      { "filter": "datum.Discipline!='Total'" }
+    ],
+    
+    "mark": {"type": "area", "line": {"color": "lightblue"}, "point": {"color": "pink"}, "color": {
+        "x1": 1,
+        "y1": 1,
+        "x2": 1,
+        "y2": 0,
+        "gradient": "linear",
+        "stops": [
+          {
+            "offset": 0,
+            "color": "white"
+          },
+          {
+            "offset": 1,
+            "color": "lightblue"
+          }
+        ]
+      }
+    },
   
-  "mark": {"type": "area", "line": {"color": "lightblue"}, "point": {"color": "pink"}, "color": {
-      "x1": 1,
-      "y1": 1,
-      "x2": 1,
-      "y2": 0,
-      "gradient": "linear",
-      "stops": [
-        {
-          "offset": 0,
-          "color": "white"
-        },
-        {
-          "offset": 1,
-          "color": "lightblue"
-        }
-      ]
-    },
-  },
-
-  "encoding": {
-    "x": {
-      "field": "Discipline",
-      "type": "nominal", 
-      "title": "Competition Projects"
-    },
-    "y": {
-      "aggregate": "sum", "field": "value",
-      "title": "Number of participants"
+    "encoding": {
+      "x": {
+        "field": "Discipline",
+        "type": "nominal", 
+        "title": "Competition Projects"
+      },
+      "y": {
+        "aggregate": "sum", "field": "value",
+        "title": "Number of participants"
+      }
     }
   }
-}
+  
