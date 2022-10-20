@@ -25,7 +25,7 @@
         "field": "value",
         "type": "quantitative"
       },
-      "color": { "field": "Discipline", "type": "nominal" }
+      "color": { "field": "Discipline", "type": "nominal","scale": {"scheme": "category20c"} }
     }
   }
   

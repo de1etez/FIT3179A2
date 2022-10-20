@@ -9,7 +9,7 @@
   
     "layer": [
       {
-        "mark": {"type": "bar", "cornerRadius": 6 },
+        "mark": {"type": "bar", "cornerRadius": 5 },
       "encoding": {
       "x": { "aggregate": "sum", "field": "value" },
       "y": { "field": "Country", "sort": "-x" },
