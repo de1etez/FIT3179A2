@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/entries_discipline.csv"},
+      "width": "container",
+      "height": "container",
+      "transform": [
+        { "fold": ["F", "M", "Total"] },
+        { "filter": "datum.Discipline!='Total'" }
+      ],
+    "encoding": {"y": {"field": "Discipline", "type": "nominal","title": "Competition Projects"}},
+    "layer": [
+      {
+        "mark": {"type": "point", "filled": true},
+        "encoding": {
+          "x": {
+            "aggregate": "mean",
+            "field": "value",
+            "type": "quantitative",
+            "scale": {"zero": false},
+            "title": "Number of contestants"
+          },
+          "color": {"value": "black"}
+        }
+      },
+      {
+        "mark": {"type": "errorbar", "extent": "ci"},
+        "encoding": {
+          "x": {"field": "value", "type": "quantitative", "title": "Number of contestants"}
+        }
+      }
+    ]
+  }
+  
