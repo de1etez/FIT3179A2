@@ -8,7 +8,7 @@
   "transform": [{ "fold": ["Gold", "Silver", "Bronze"] }],
   "encoding": {
     "x": { "field": "key", "type": "ordinal","sort": "-y", "title": "Medals"},
-    "y": { "field": "Country", "type": "ordinal","sort": "-x" }
+    "y": { "field": "Country", "type": "ordinal","sort": "-x", "title": "Country" }
   },
   "layer": [
     {
@@ -18,7 +18,8 @@
           "field": "value",
           "type": "quantitative",
           "title": "Count of Medals",
-          "legend": { "direction": "horizontal", "gradientLength": 120 }
+          "scale": {"scheme": "Blues"},
+          "legend": { "gradientLength": 580 }
         }
       }
     },
@@ -27,7 +28,7 @@
       "encoding": {
         "text": { "field": "value", "type": "quantitative" },
         "color": {
-          "condition": { "test": "datum['value'] > 10", "value": "white" },
+          "condition": { "test": "datum['value'] >= 10", "value": "white" },
           "value": "black"
         }
       }

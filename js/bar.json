@@ -1,37 +1,36 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": "container",
-    "data": {
-      "url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/medals_total.csv"
-    },
-    "transform": [{ "fold": ["Gold", "Silver", "Bronze"] }],
-  
-    "layer": [
-      {
-        "mark": {"type": "bar", "cornerRadius": 5 },
-      "encoding": {
-      "x": { "aggregate": "sum", "field": "value" },
-      "y": { "field": "Country", "sort": "-x" },
-      
-      "color": {
-        "field": "key",
-        "title": "Medals",
-        "scale": {
-          "range": ["#dba71a", "#aaaaaa", "#ce812f"],
-          "domain": ["Gold", "Silver", "Bronze"]
-        }
-          }
-        }
-      },
-      {
-        "mark": { "type": "text", "tooltip": true,"dx": 10 },
-        "encoding": {
-          "text": { "aggregate": "sum", "field": "value" },
-          "x": { "aggregate": "sum", "field": "value" },
-          "y": { "field": "Country", "sort": "-text" }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/medals_total.csv"
+  },
+  "transform": [{ "fold": ["Gold", "Silver", "Bronze"] }],
+
+  "layer": [
+    {
+      "mark": {"type": "bar", "cornerRadius": 5 },
+    "encoding": {
+    "x": { "aggregate": "sum", "field": "value" },
+    "y": { "field": "Country", "sort": "-x" },
+    
+    "color": {
+      "field": "key",
+      "title": "Medals Type",
+      "scale": {
+        "range": ["#dba71a", "#aaaaaa", "#ce812f"],
+        "domain": ["Gold", "Silver", "Bronze"]
+      }
         }
       }
-    ]
-  }
-  
+    },
+    {
+      "mark": { "type": "text", "tooltip": true,"dx": 10 },
+      "encoding": {
+        "text": { "aggregate": "sum", "field": "value" },
+        "x": { "aggregate": "sum", "field": "value", "title": "Total Medals"},
+        "y": { "field": "Country", "sort": "-text", "title": "Country" }
+      }
+    }
+  ]
+}

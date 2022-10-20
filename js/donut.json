@@ -1,31 +1,30 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/entries_discipline.csv"
-    },
-    "params": [
-      {
-        "name": "Gender",
-        "value": "Total",
-        "bind": { "input": "select", "options": ["F", "M", "Total"] }
-      }
-    ],
-    "transform": [
-      { "fold": ["F", "M", "Total"] },
-      { "filter": { "field": "key", "equal": { "expr": "Gender" } } },
-      { "filter": "datum.Discipline!='Total'" }
-    ],
-    "width": 400,
-    "height": 400,
-  
-    "mark": { "type": "arc", "innerRadius": 60, "tooltip": true },
-    "encoding": {
-      "theta": {
-        "aggregate": "sum",
-        "field": "value",
-        "type": "quantitative"
-      },
-      "color": { "field": "Discipline", "type": "nominal","scale": {"scheme": "category20c"} }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/entries_discipline.csv"
+  },
+  "params": [
+    {
+      "name": "Gender",
+      "value": "Total",
+      "bind": { "input": "select", "options": ["F", "M", "Total"] }
     }
+  ],
+  "transform": [
+    { "fold": ["F", "M", "Total"] },
+    { "filter": { "field": "key", "equal": { "expr": "Gender" } } },
+    { "filter": "datum.Discipline!='Total'" }
+  ],
+  "width": "container",
+  "height": "container",
+
+  "mark": { "type": "arc", "innerRadius": 60, "tooltip": true },
+  "encoding": {
+    "theta": {
+      "aggregate": "sum",
+      "field": "value",
+      "type": "quantitative"
+    },
+    "color": { "field": "Discipline", "type": "nominal","title": "Competition Projects","scale": {"scheme": "category20c"} }
   }
-  
+}
