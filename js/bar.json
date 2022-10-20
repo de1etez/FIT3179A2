@@ -18,7 +18,7 @@
       "field": "key",
       "title": "Medals Type",
       "scale": {
-        "range": ["#dba71a", "#aaaaaa", "#ce812f"],
+        "range": ["#FFD700", "#c0c0c0", "#cd7f32"],
         "domain": ["Gold", "Silver", "Bronze"]
       }
         }

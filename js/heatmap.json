@@ -3,8 +3,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/de1etez/FIT3179A2/main/data/medals_total.csv"
   },
-  "width":400,
-  "height":600,
+  "width":"container",
+  "height":"container",
   "transform": [{ "fold": ["Gold", "Silver", "Bronze"] }],
   "encoding": {
     "x": { "field": "key", "type": "ordinal","sort": "-y", "title": "Medals"},
