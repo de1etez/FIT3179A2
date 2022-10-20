@@ -15,8 +15,8 @@
       { "filter": { "field": "key", "equal": { "expr": "Gender" } } },
       { "filter": "datum.Discipline!='Total'" }
     ],
-    "width": "container",
-    "height": "container",
+    "width": 800,
+    "height": 600,
   
     "mark": { "type": "arc", "innerRadius": 60, "tooltip": true },
     "encoding": {
